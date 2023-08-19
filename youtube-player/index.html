@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube制限回避ツール</title>
+    <meta http-equiv="Content-Language" content="ja">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="YouTube,検閲,iPad,学校,制限,スクリーンタイム,ツール,荒らし共栄圏">
+    <meta name="description" content="学校のiPadなどにあるYoutubeを制限するものと突破するものです。">
+    <meta name="author" content="myamya-wiki">
+    <meta name="author" content="© 2023 myamya-wiki">
+    <link rel="icon" href="/images/favicon.ico">
+    <style>
+        /* 全体のスタイル */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        /* ナビゲーションメニュー */
+        nav {
+            background-color: #444;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        /* メインコンテンツ */
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* セクション */
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        /* YouTube埋め込みのスタイル */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* フォームスタイル */
+        form {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+
+        /* フッター */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* レスポンシブデザイン */
+        @media screen and (max-width: 600px) {
+            nav li {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+        }
+
+        label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>myamya-tools</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/index.html">ホーム</a></li>
+            <li><a href="/youtube-player/index.html">YouTube制限回避ツール</a></li>
+            <li><a href="/proxies/index.html">無料プロキシ一覧</a></li>
+            <li><a href="/contact/index.html">お問い合わせ</a></li>
+        </ul>
+    </nav>
+    <main>
+            <div class="container">
+                <h2>YouTube制限回避ツール</h2>
+                <form onsubmit="convertAndEmbed(event)">
+                    <label for="youtubeUrl">YouTube URL:</label>
+                    <input type="text" id="youtubeUrl" required>
+                    <button type="submit">読み込む</button>
+                </form>
+    
+                <div id="embeddedVideo"></div>
+            </div>
+        </main>
+    
+        <script>
+            /* 
+            一応教育委員会のアホにアルゴリズムがわからないように難読化しました。
+            仕組みが知りたいような物好きはDiscordのDMなりで聞いてください。
+            */
+            var _0xf27e = ["\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74",
+                            "\x79\x6F\x75\x74\x75\x62\x65\x55\x72\x6C",
+                            "\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64",
+                            "\x74\x72\x69\x6D",
+                            "\x76\x61\x6C\x75\x65",
+                            "\x6D\x61\x74\x63\x68",
+                            "\x68\x74\x74\x70\x73\x3A\x2F\x2F\x77\x77\x77\x2E\x79\x6F\x75\x74\x75\x62\x65\x2D\x6E\x6F\x63\x6F\x6F\x6B\x69\x65\x2E\x63\x6F\x6D\x2F\x65\x6D\x62\x65\x64\x2F",
+                            "",
+                            "\x65\x6D\x62\x65\x64\x64\x65\x64\x56\x69\x64\x65\x6F",
+                            "\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C",
+                            "\x3C\x69\x66\x72\x61\x6D\x65\x20\x77\x69\x64\x74\x68\x3D\x22\x35\x36\x30\x22\x20\x68\x65\x69\x67\x68\x74\x3D\x22\x33\x31\x35\x22\x20\x73\x72\x63\x3D\x22",
+                            "\x22\x20\x66\x72\x61\x6D\x65\x62\x6F\x72\x64\x65\x72\x3D\x22\x30\x22\x20\x61\x6C\x6C\x6F\x77\x3D\x22\x61\x63\x63\x65\x6C\x65\x72\x6F\x6D\x65\x74\x65\x72\x3B\x20\x61\x75\x74\x6F\x70\x6C\x61\x79\x3B\x20\x63\x6C\x69\x70\x62\x6F\x61\x72\x64\x2D\x77\x72\x69\x74\x65\x3B\x20\x65\x6E\x63\x72\x79\x70\x74\x65\x64\x2D\x6D\x65\x64\x69\x61\x3B\x20\x67\x79\x72\x6F\x73\x63\x6F\x70\x65\x3B\x20\x70\x69\x63\x74\x75\x72\x65\x2D\x69\x6E\x2D\x70\x69\x63\x74\x75\x72\x65\x22\x20\x61\x6C\x6C\x6F\x77\x66\x75\x6C\x6C\x73\x63\x72\x65\x65\x6E\x3E\x3C\x2F\x69\x66\x72\x61\x6D\x65\x3E",
+                            "\x50\x6C\x65\x61\x73\x65\x20\x65\x6E\x74\x65\x72\x20\x61\x20\x59\x6F\x75\x54\x75\x62\x65\x20\x55\x52\x4C\x2E",
+                            "\x49\x6E\x76\x61\x6C\x69\x64\x20\x59\x6F\x75\x54\x75\x62\x65\x20\x55\x52\x4C\x2E\x20\x50\x6C\x65\x61\x73\x65\x20\x65\x6E\x74\x65\x72\x20\x61\x20\x76\x61\x6C\x69\x64\x20\x55\x52\x4C\x2E"
+                            ];
+
+            function convertAndEmbed(_0xf6f5x2) {
+            	_0xf6f5x2[_0xf27e[0]]();
+            	const _0xf6f5x3 = document[_0xf27e[2]](_0xf27e[1]);
+            	const _0xf6f5x4 = _0xf6f5x3[_0xf27e[4]][_0xf27e[3]]();
+            	const _0xf6f5x5 = /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/ ]{11})/;
+            	const _0xf6f5x6 = _0xf6f5x4[_0xf27e[5]](_0xf6f5x5);
+            	if(_0xf6f5x6) {
+            		const _0xf6f5x7 = _0xf6f5x6[1];
+            		const _0xf6f5x8 = `${_0xf27e[6]}${_0xf6f5x7}${_0xf27e[7]}`;
+            		const _0xf6f5x9 = document[_0xf27e[2]](_0xf27e[8]);
+            		_0xf6f5x9[_0xf27e[9]] = `${_0xf27e[10]}${_0xf6f5x8}${_0xf27e[11]}`
+            	} else {
+            		if(_0xf6f5x4 === _0xf27e[7]) {
+            			alert(_0xf27e[12])
+            		} else {
+            			alert(_0xf27e[13])
+            		}
+            	}
+            }
+        </script>
+    </main>
+
+    <footer>
+        <p>© 2023 myamya-tools. All rights reserved.</p>
+    </footer>
+</body>
+</html>
