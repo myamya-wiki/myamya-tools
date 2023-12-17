@@ -33,3 +33,6 @@ function convertAndEmbed(_0xf6f5x2) {
 		}
 	}
 }
+
+// リロード処理確認用 リロード1秒後にアラートを表示
+setTimeout("alert('読み込みされました')",1000);
