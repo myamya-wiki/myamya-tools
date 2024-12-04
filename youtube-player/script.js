@@ -1,3 +1,4 @@
+//youtube viewer start
 var _0xf27e = ["\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74",
                 "\x79\x6F\x75\x74\x75\x62\x65\x55\x72\x6C",
                 "\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64",
@@ -33,6 +34,5 @@ function convertAndEmbed(_0xf6f5x2) {
 		}
 	}
 }
-
-// リロード処理確認用 リロード1秒後にアラートを表示
-setTimeout("alert('読み込みされました')",1000);
+//youtube viewer end
+console.log("これが見えているということはWindowsかMacでしょう。あなたは相当暇人です。もっと生産性のあることをしましょうwww")

@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お問い合わせ</title>
+    <title>iPad 制限回避ツール</title>
     <meta http-equiv="Content-Language" content="ja">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="keywords" content="YouTube,検閲,iPad,学校,制限,スクリーンタイム,ツール">
-    <meta name="description" content="myamya-toolsの問い合わせフォームがあるところです。気になったことがあれば問い合わせしていただければと思います。">
+    <meta name="description" content="iPadのウェブ制限を回避するためのファイルを配布しています。">
     <meta name="author" content="myamya-tools">
     <meta name="author" content="© 2023 myamya-tools">
     <link rel="icon" href="/images/favicon.ico">
+	<meta name="google-site-verification" content="MMH0FO7G__XZ3UtZoI7PgPA0wsuQOtwCN9ltk5vREO8" />
     <style>
         /* 全体のスタイル */
         body {
@@ -88,11 +89,32 @@
                 margin: 5px 0;
             }
         }
+               /* 表のスタイル */
+        table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        }
+    
+        th, td {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        text-align: left;
+        }
+    
+        th {
+        background-color: #333;
+        color: #fff;
+        }
+
+        .red{
+        color: red;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>お問い合わせ</h1>
+        <h1>myamya-tools</h1>
     </header>
 
     <nav>
@@ -108,31 +130,50 @@
 
     <main>
         <section>
-            <h2>お問い合わせ</h2>
-            <p>ツール関係でバグってるところや質問、このようなツールを作ってほしいなどありましたらお問い合わせください。</p>
-            <p>確実にツールを作るとかいう保証は一切ありませんのでそこらへん理解宜しくお願いします。</p>
+            <h2>iPad 制限回避ファイル</h2>
+            <p>
+                Cisco umbrellaというDNSを利用したウェブサイトフィルタリングを回避するためのファイル一覧です。<br/>
+                ファイルをダウンロードし、端末にインストールしてファイルの構成をメインに選択すると制限を回避することができます。<br/>
+                自ら必要だと思う構成ファイルをダウンロード、インストールし適応してください。
+            </p>
+            <p style="color: red;">またこの構成ファイルのバグについては対応しますが、もし損害が発生した場合の責任は負いかねます。
+                <br/>自ら判断をし、自らの責任ですべて設定等をするようにお願いいたします。
+            </p>
+            
         </section>
-
         <section>
-            <!-- Google Forms Start -->
-            <iframe 
-            src="https://docs.google.com/forms/d/e/1FAIpQLSekjffkoKLDoafeW-hSYWYP9D3KNBxiuQw5XHiwYhHN0WtThw/viewform?embedded=true"
-            width="100%"
-            height="800"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-            >
-            読み込んでいます…
-            </iframe>
-            <!-- Google Forms End -->
+            <table border="1">
+                <th>ファイル名</th>
+                <th>サーバー会社</th>
+                <th>ダウンロード</th>
+                <tr>
+                    <td>Private DNS settings - A</td>
+                    <td>AdGuard DNS</td>
+                    <td>
+                        <a href="./Private DNS Settings - A.mobileconfig" target="_blank" rel="noopener noreferrer">クリック</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Private DNS settings - C</td>
+                    <td>Cloudflare</td>
+                    <td>
+                        <a href="./Private DNS settings - C.mobileconfig" target="_blank" rel="noopener noreferrer">クリック</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Private DNS settings - G</td>
+                    <td>Google</td>
+                    <td>
+                        <a href="./Private DNS settings - G.mobileconfig" target="_blank" rel="noopener noreferrer">クリック</a>
+                    </td>
+                </tr>
+            </table>
         </section>
-
         <!-- 他のセクションを追加 -->
     </main>
 
     <footer>
-        <p>© 2023 myamya-tools. All rights reserved.</p>
+        <p>© 2023-2024 myamya-tools. All rights reserved.</p>
     </footer>
 </body>
 </html>
